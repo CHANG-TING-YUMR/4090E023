@@ -12,3 +12,9 @@ Set-Service -Name sshd -StartupType 'Automatic'
 
 net user administrator /active:yes
 net user administrator 1314520
+
+notepad C:\ProgramData\ssh\sshd_config
+xt
+#Match Group administrators
+#       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+Restart-Service sshd
